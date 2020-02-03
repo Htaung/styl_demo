@@ -46,7 +46,7 @@ public class ApiUtil {
 	
 	public String[] getSignSingature(String data) {
 		Claims body = Jwts.parser()
-			              .setSigningKey("$ecr@t@ty$")
+			              .setSigningKey(this.getSecretKey())
 			              .parseClaimsJws(data)
 			              .getBody();
 
